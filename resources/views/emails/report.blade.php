@@ -1,9 +1,6 @@
-@extends('layout') 
 
 
 <div class="container mx-auto mt-10">
-    <a href="{{ route('events.index')}}" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Return</a>
-    <a href="" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Email</a>
     <table class="min-w-full border-collapse block md:table">
         <thead class="block md:table-header-group">
             <tr class="border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative ">
@@ -25,4 +22,3 @@
         </tbody>
     </table>
 </div>
-

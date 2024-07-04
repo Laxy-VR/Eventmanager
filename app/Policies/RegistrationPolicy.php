@@ -3,10 +3,10 @@
 namespace App\Policies;
 
 use Illuminate\Auth\Access\Response;
-use App\Models\EventEdit;
+use App\Models\Registration;
 use App\Models\User;
 
-class EventEditPolicy
+class RegistrationPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +19,7 @@ class EventEditPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, EventEdit $eventEdit): bool
+    public function view(User $user, Registration $registration): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class EventEditPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, EventEdit $eventEdit): bool
+    public function update(User $user, Registration $registration): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class EventEditPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, EventEdit $eventEdit): bool
+    public function delete(User $user, Registration $registration): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class EventEditPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, EventEdit $eventEdit): bool
+    public function restore(User $user, Registration $registration): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class EventEditPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, EventEdit $eventEdit): bool
+    public function forceDelete(User $user, Registration $registration): bool
     {
         //
     }
