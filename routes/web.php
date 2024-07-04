@@ -11,7 +11,7 @@ Route::resource('registrations', RegistrationController::class);
 
 Route::redirect('/', 'events');
 
-Route::redirect('/', 'registrations' );
+Route::redirect('/registration', 'registrations' );
  
 Route::get('/edit', [EventController::class, 'edit'])->name('edit');
 
