@@ -20,14 +20,6 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('registrations', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('event_id')->constrained();
-            $table->string('user_name');
-            $table->string('email');
-            $table->timestamp('registered_at');
-            $table->timestamps();
-        });
     }
 
     /**
@@ -36,6 +28,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('events');
-        Schema::dropIfExists('registration');
     }
 };

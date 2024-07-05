@@ -17,7 +17,9 @@ class RegistrationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'event_id' => rand(1,2),
+            'user_name' => fake()->name(),
+            'email' => fake()->unique()->safeEmail(),
         ];
     }
 }

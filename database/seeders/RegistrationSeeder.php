@@ -13,12 +13,8 @@ class RegistrationSeeder extends Seeder
      */
     public function run(): void
     {
-        
-        registration::factory()->create([
-            'event_id' => '2',
-            'user_name' => 'Mike',
-            'email' => 'Mike@gmail.com',
-            
-        ]);
+    Registration::factory()
+        ->count(10)
+        ->create();
     }
 }

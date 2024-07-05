@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('event_id');
             $table->string('user_name');
             $table->string('email');
+            $table->timestamp('registered_at');
             $table->timestamps();
         });
     }
