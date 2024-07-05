@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Http\Controllers\Controller;
+use App\Mail\RegMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class EventController extends Controller
 {
@@ -13,7 +16,15 @@ class EventController extends Controller
      */
     public function index()
     {
+
         $events = Event::all();
+
+        try {
+            Mail::to('mikey@test.com')->send(new RegMail());
+            Log::info('Email sent successfully');
+        } catch (\Exception $e) {
+            Log::error('Error sending email: ' . $e->getMessage());
+        }
 
         return view('events.index', [ 'events' => $events ]);
     }

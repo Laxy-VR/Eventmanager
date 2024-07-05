@@ -3,14 +3,13 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use App\Models\Registration;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class EventRegistrations extends Mailable
+class RegMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -19,7 +18,7 @@ class EventRegistrations extends Mailable
      */
     public function __construct()
     {
-        
+        //
     }
 
     /**
@@ -28,7 +27,7 @@ class EventRegistrations extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Daily Registrations Report',
+            subject: 'email from eventmanager',
         );
     }
 
@@ -38,7 +37,7 @@ class EventRegistrations extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.report',
+            view: 'emails.regmails',
         );
     }
 

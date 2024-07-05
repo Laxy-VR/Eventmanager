@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Registration;
 use App\Models\Event;
 use App\Http\Controllers\Controller;
-use App\Mail\EventRegistrations;
+use App\Mail\RegMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -20,6 +20,7 @@ class RegistrationController extends Controller
         $registrations = Registration::with('event')->get();
 
         return view('registrations.index', ['registrations' => $registrations]);
+
     }
 
     /**
@@ -47,6 +48,8 @@ class RegistrationController extends Controller
 
         // Create Registration
         Registration::create($fields);
+
+        
 
         // Redirect to index
         return redirect()->route('events.index')->with('success', 'Registration successful!');

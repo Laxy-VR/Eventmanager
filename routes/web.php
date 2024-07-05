@@ -9,15 +9,17 @@ Route::resource('events', EventController::class);
 
 Route::resource('registrations', RegistrationController::class);
 
+Route::resource('report', RegistrationController::class);
+
 Route::redirect('/', 'events');
 
-Route::redirect('/registration', 'registrations' );
+Route::get('/registration', [RegistrationController::class, 'index']);
  
 Route::get('/edit', [EventController::class, 'edit'])->name('edit');
 
 Route::get('/create', [EventController::class, 'create'])->name('create');
 
-Route::get('/', [EventController::class, 'store'])->name('store');
+Route::get('/index', [EventController::class, 'store'])->name('store');
 
 Route::get('/registrations/create/{event}', [RegistrationController::class, 'create'])->name('registrations.create');
 
